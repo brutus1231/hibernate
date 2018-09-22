@@ -27,16 +27,7 @@ public class Worker implements Serializable {
     @Column(name="HIRE_DATE", nullable = false)
     private Date hire_date;
 
-//    @Column(name="DEPARTMENT_ID")
-//    @ManyToOne
-//    private Long department_id;
-
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="DEPARTMENT_ID", nullable=false)
     Department department;
-
-
 }
-
-
-

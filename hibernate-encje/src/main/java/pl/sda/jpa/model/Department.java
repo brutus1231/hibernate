@@ -2,7 +2,6 @@ package pl.sda.jpa.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @Table(name = "DEPARTMENT")
@@ -13,13 +12,15 @@ public class Department implements Serializable {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         @Column(name="DEPARTMENT_ID")
-        private Long id;
+        private int id;
 
         @Column(name = "NAME", nullable = false)
         private String name;
 
-
-    }
+        public Department(String name) {
+                this.name = name;
+        }
+}
 
 
 
