@@ -8,6 +8,7 @@ import java.util.List;
 
 public class DepartmentDaoImpl {
 
+    private final HibernateUtil hibernateUtil = HibernateUtil.getInstance();
     private final EntityManager entityManager = HibernateUtil.getInstance().getEntityManager();
 
     public List<Department> list() {
@@ -19,6 +20,11 @@ public class DepartmentDaoImpl {
         entityManager.getTransaction().begin();
         entityManager.remove(employee);
         entityManager.getTransaction().commit();
+    }
+
+    public void create(String name) {
+        Department department = new Department(name);
+        hibernateUtil.save(department);
     }
 
 }

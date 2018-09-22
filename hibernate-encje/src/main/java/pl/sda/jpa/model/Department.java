@@ -22,7 +22,7 @@ public class Department {
     protected Department() {
     }
 
-    private Department(String name) {
+    public Department(String name) {
         this.name = name;
     }
 
