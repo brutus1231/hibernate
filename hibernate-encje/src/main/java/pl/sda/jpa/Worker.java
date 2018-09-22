@@ -16,6 +16,12 @@ public class Worker implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DEPARTMENT_ID", nullable = false)
     Department department;
+    @Column (name = "FIRST_NAME")
+    private String workerName;
+    @Column (name = "LAST_NAME")
+    private String lastNameWorker;
+    @Column (name = "AGE")
+    private String ageWorker;
 
 
 }

@@ -11,6 +11,8 @@ public class Main {
                         Persistence.createEntityManagerFactory("manager1");
                 EntityManager entityManager = entityManagerFactory.createEntityManager();
 
+                Department department = new Department("Damiana Chata");
+
                 entityManager.close();
                 entityManagerFactory.close();
 

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 
+
 @Entity
 @Table (name = "TAB_DEPARTAMENT")
 public class Department implements Serializable  {
@@ -18,6 +19,9 @@ public class Department implements Serializable  {
     @Column(name = "NAME")
     private String departmentname;
 
+    public Department(String departmentname) {
+        this.departmentname = departmentname;
+    }
 }
 
 
