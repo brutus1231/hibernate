@@ -7,7 +7,18 @@
     <groupId>pl.sda.jpa</groupId>
     <artifactId>hibernate-konfiguracja</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.3.6.Final</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
