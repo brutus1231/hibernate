@@ -11,7 +11,7 @@ public class Worker implements Serializable {
     private static final long serialVersionUID = 2010120128336171270L;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "WORKER_ID", updatable = false, nullable = false)
     private Long id;
 
@@ -32,39 +32,20 @@ public class Worker implements Serializable {
     @JoinColumn(name = "DEPARTAMENT_ID", nullable = false)
     private Department department;
 
-    public Long getId() {
-        return id;
+    Worker() {
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
+    private Worker(String firstName, String lastName,
+                   Integer age, Date hireDate, Department department) {
         this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
         this.age = age;
-    }
-
-    public Date getHireDate() {
-        return hireDate;
-    }
-
-    public void setHireDate(Date hireDate) {
         this.hireDate = hireDate;
+        this.department = department;
+    }
+
+    public static Worker create(String firstName, String lastName,
+                                Integer age, Date hireDate, Department department) {
+        return new Worker(firstName, lastName, age, hireDate, department);
     }
 }
