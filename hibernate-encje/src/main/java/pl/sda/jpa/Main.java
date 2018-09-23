@@ -28,6 +28,11 @@ public class Main {
 //        bo.delete();
 //        bo.delete(3L);
 
+//        OsobaFizyczna osobaFizyczna = new OsobaFizyczna
+//                ("123131", "wefewf@wp.pl", "Marek", "Nowak", "34853451123",
+//                "doc 21324");
+//        HibernateUtil.getInstance().save(osobaFizyczna);
+
         HibernateUtil.getInstance().close();
 
     }
