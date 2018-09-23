@@ -1,21 +1,52 @@
 package pl.sda.jpa.model;
 
-
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "DEPARTMENT")
-public class Department implements Serializable {
-    private static final long serialVersionUID = 232110525334L;
+//@NamedQuery(name = "list2", query = "select d from Department d")
+public class Department {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "CUSTOMER_ID")
+    @GeneratedValue
+    @Column(name = "DEPARTMENT_ID", updatable = false, nullable = false)
     private Long id;
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "CREATED_DATE", nullable = false)
-    private Date createdDate;
+    @Column(name = "NAME", length = 50)
+    private String name;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
+    private Set<Worker> workers;
+
+    protected Department() {
+    }
+
+    public Department(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<Worker> getWorkers() {
+        return workers;
+    }
+
+    public void setWorkers(Set<Worker> workers) {
+        this.workers = workers;
+    }
+
+    public static Department create(String name) {
+        return new Department(name);
+    }
 }
