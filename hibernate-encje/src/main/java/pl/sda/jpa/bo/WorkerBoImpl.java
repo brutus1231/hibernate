@@ -10,6 +10,9 @@ public class WorkerBoImpl {
         for (Worker worker:dao.list()) {
             System.out.println(worker.toString());
         }
+    }
 
+    public void delete(Long workerId){
+        dao.delete(workerId);
     }
 }

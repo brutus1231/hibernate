@@ -14,12 +14,14 @@ public class Main {
 //        DepartmentDaoImpl departamentDao = new DepartmentDaoImpl();
 //        departamentDao.create("IT2");
 //        WorkerDaoImpl workerDao = new WorkerDaoImpl();
-//        Department department = new Department("nowy");
-//        workerDao.create("Marek", "Nowak", 30, new Date(), department);
+//        Department department = new Department("Informatyka");
+//        workerDao.create("Marta", "Bagińska", 25, new Date(), department);
+//
+//
 
         WorkerBoImpl bo = new WorkerBoImpl();
         bo.list();
-
+        bo.delete(1l);
         HibernateUtil.getInstance().close();
     }
 }
