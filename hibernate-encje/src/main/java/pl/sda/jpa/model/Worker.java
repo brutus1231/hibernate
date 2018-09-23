@@ -28,7 +28,7 @@ public class Worker implements Serializable {
     @Column(name = "HIRE_DATE", nullable = false)
     private Date hireDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "DEPARTAMENT_ID", nullable = false)
     private Department department;
 
@@ -47,5 +47,10 @@ public class Worker implements Serializable {
     public static Worker create(String firstName, String lastName,
                                 Integer age, Date hireDate, Department department) {
         return new Worker(firstName, lastName, age, hireDate, department);
+    }
+
+    @Override
+    public String toString() {
+        return this.firstName + " " + this.lastName + " " + this.hireDate;
     }
 }
