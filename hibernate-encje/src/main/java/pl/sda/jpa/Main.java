@@ -8,9 +8,9 @@ public class Main {
     public static void main(String[] args) {
 
         DepartmentDaoImpl departamentDao = new DepartmentDaoImpl();
-        departamentDao.create("IT2");
+        departamentDao.create("IT3");
 
-
+        HibernateUtil.getInstance().close();
 
     }
 }
