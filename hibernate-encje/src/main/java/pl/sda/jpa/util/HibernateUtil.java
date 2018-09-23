@@ -2,6 +2,7 @@ package pl.sda.jpa.util;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import pl.sda.jpa.model.Worker;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -46,5 +47,13 @@ public class HibernateUtil {
     public void close() {
         entityManager.close();
         entityManagerFactory.close();
+    }
+
+    public void delete(Long objectId, Class clazz) {
+
+        entityManager.getTransaction().begin();
+        Object toRemove = entityManager.find(clazz, objectId);
+        entityManager.remove(toRemove);
+        entityManager.getTransaction().commit();
     }
 }
