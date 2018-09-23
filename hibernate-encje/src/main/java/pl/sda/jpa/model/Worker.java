@@ -31,10 +31,9 @@ public class Worker implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DEPARTAMENT_ID", nullable = false)
     private Department department;
-
-    @Column
-    private String test;
-
+//
+//    @Column
+//    private String test;
 
     public Long getId() {
         return id;
