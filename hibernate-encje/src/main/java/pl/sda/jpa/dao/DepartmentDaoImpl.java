@@ -6,10 +6,8 @@ import pl.sda.jpa.util.HibernateUtil;
 import javax.persistence.EntityManager;
 import java.util.List;
 
-public class DepartmentDaoImpl {
+public class DepartmentDaoImpl extends AbstractDao {
 
-    private final HibernateUtil hibernateUtil = HibernateUtil.getInstance();
-    private final EntityManager entityManager = HibernateUtil.getInstance().getEntityManager();
 
     public List<Department> list() {
         return entityManager.createQuery("Select d from Department d").getResultList();
