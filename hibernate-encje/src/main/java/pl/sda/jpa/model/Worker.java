@@ -29,7 +29,8 @@ public class Worker implements Serializable {
     private Date hireDate;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "DEPARTAMENT_ID", nullable = false)
+    @JoinColumn(name = "DEPARTAMENT_ID", nullable = false,
+            foreignKey = @ForeignKey(name = "fk_worker_dept"))
     private Department department;
 
     Worker() {
