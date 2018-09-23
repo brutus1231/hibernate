@@ -9,8 +9,7 @@ public class Main {
 
         DepartmentDaoImpl departamentDao = new DepartmentDaoImpl();
         departamentDao.create("IT2");
+
         HibernateUtil.getInstance().close();
-
-
     }
 }

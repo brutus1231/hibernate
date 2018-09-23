@@ -32,6 +32,10 @@ public class Worker implements Serializable {
     @JoinColumn(name = "DEPARTAMENT_ID", nullable = false)
     private Department department;
 
+    @Column
+    private String test;
+
+
     public Long getId() {
         return id;
     }
