@@ -30,7 +30,8 @@ public class Worker implements Serializable {
 
     //może być jeszcze orphanRemoval - usuwa w bazie jużeli zmienimy w programie
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "DEPARTAMENT_ID", nullable = false)
+    @JoinColumn(name = "DEPARTAMENT_ID", nullable = false,
+            foreignKey = @ForeignKey(name = "fk_worker_dept"))
     private Department department;
 //  gdy nazwa kolumny taka sama jak zmiennej to nie trzeba dodawać parametru name
 //    @Column
