@@ -1,14 +1,16 @@
 package pl.sda.jpa;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import pl.sda.jpa.dao.DepartmentDaoImpl;
+import pl.sda.jpa.model.Department;
+import pl.sda.jpa.util.HibernateUtil;
 
 public class Main {
     public static void main(String[] args) {
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("manager1");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        entityManager.close();
-        entityManagerFactory.close();
+
+        DepartmentDaoImpl departamentDao = new DepartmentDaoImpl();
+        departamentDao.create("IT2");
+
+
+
     }
 }
