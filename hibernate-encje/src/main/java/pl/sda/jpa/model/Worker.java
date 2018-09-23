@@ -54,4 +54,10 @@ public class Worker implements Serializable {
 
        return new Worker(firstName, lastName,age, hireDate, department);
     }
+
+    @Override
+    public String toString() {
+
+        return this.firstName + " " + this.lastName + " " + this.hireDate;
+    }
 }

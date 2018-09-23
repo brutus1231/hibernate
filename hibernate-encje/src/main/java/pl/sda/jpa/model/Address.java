@@ -23,4 +23,8 @@ public class Address {
 
     @Column(name = "POSTAL_CODE", length = 50)
     private String postalCode;
+
+    //ustawia adres w adresie na obiekt konkretny z person przypisany przez relację w Address
+    @OneToOne(mappedBy = "address")
+    private Person person;
 }

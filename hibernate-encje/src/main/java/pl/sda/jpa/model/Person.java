@@ -1,7 +1,7 @@
 package pl.sda.jpa.model;
 
 import javax.persistence.*;
-import javax.xml.crypto.Data;
+import java.util.Date;
 
 @Entity
 @Table(name = "PERSON")
@@ -20,5 +20,11 @@ public class Person {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "BIRTH_DADE")
-    private Data birthDate;
+    private Date birthDate;
+
+
+    //encja person jest właścicielem relacji bo wnim zapisywany jest id addresu
+    @OneToOne
+    @JoinColumn(name = "ADDRESS_ID")
+    private Address address;
 }
