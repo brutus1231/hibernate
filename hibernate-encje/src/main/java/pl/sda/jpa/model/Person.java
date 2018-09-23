@@ -1,0 +1,27 @@
+package pl.sda.jpa.model;
+
+
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity
+@Table(name = "PERSON")
+public class Person {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(name = "FIRST_NAME")
+    private String firstName;
+
+    @Column(name = "LAST_NAME")
+    private String lastName;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "BIRTH_DATE")
+    private Date birthDate;
+
+    @OneToOne
+    @JoinColumn(name = "ADDRESS_ID")
+    private Address address;
+}
