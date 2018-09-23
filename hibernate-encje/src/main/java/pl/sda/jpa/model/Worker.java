@@ -7,7 +7,7 @@ import java.util.Date;
 @Entity
 @Table(name = "WORKER")
 public class Worker implements Serializable {
-
+    //nie jest potrzebne do innych zastosowań
     private static final long serialVersionUID = 2010120128336171270L;
 
     @Id
@@ -28,7 +28,8 @@ public class Worker implements Serializable {
     @Column(name = "HIRE_DATE", nullable = false)
     private Date hireDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    //może być jeszcze orphanRemoval - usuwa w bazie jużeli zmienimy w programie
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "DEPARTAMENT_ID", nullable = false)
     private Department department;
 //  gdy nazwa kolumny taka sama jak zmiennej to nie trzeba dodawać parametru name

@@ -7,8 +7,9 @@ import java.util.Date;
 
 public class WorkerDaoImpl extends AbstractDao {
 
-    void createWorker(String firstName, String lastName,
+    public void create(String firstName, String lastName,
                       Integer age, Date hireDate, Department department){
         Worker worker = Worker.create(firstName, lastName, age, hireDate, department);
+        hibernateUtil.save(worker);
     }
 }
