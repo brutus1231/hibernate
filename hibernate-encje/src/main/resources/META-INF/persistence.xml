@@ -16,9 +16,9 @@
             <property name="javax.persistence.jdbc.password" value="scott"/>
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:mysql://localhost:3306/hibernate2?useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.jdbc.time_zone" value="UTC" />
-            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
 </persistence>
